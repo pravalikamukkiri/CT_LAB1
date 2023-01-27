@@ -1,0 +1,40 @@
+%%%%Question 1
+
+#include<stdio.h>
+double power(double x,int y);
+int main()
+{
+    double a;
+    scanf("%lf",&a);
+    int n;
+    scanf("%d",&n);
+    double p;
+    p=power(a,n);
+    if(n>0)
+    {
+        printf("%lf",p);
+    }
+    else
+    {
+        printf("%lf",1/p);
+    }
+}
+double power(double x,int y)
+{
+    if(y<0)
+    {
+        y=y*(-1);
+    }
+    else
+    {
+        y=y*1;
+    }
+    if(y==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return (x*power(x,y-1));
+    }
+}
